@@ -18,6 +18,30 @@ def firstDuplicate(a):
 
 
 
-x= [2, 1, 3, 5, 3, 2]
+def firstNotRepeatingCharacter(s):
+    char_set=list()
+    char_counter=list()
+    output='_'
+    for char in s:
+        if char not in char_set:
+            char_set.append(char)
+            char_counter.append(1)
+        else:
+            char_counter[char_set.index(char)]+=1
+    if 1 in char_counter:
+        output=char_set[char_counter.index(1)]
+    return output
 
-print(firstDuplicate(x))
+
+def main():
+    x = [2, 1, 3, 5, 3, 2]
+    s = "abacabad"
+    print(firstDuplicate(x))
+    print(firstNotRepeatingCharacter(s))
+
+
+if __name__ == "__main__":
+    main()
+
+
+
